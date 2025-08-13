@@ -109,11 +109,11 @@ const config = {
           items: [
             {
               label: 'Documentación Técnica',
-              to: '/technical/overview',
+              to: '/docs/technical/overview',
             },
             {
               label: 'Manual de Usuario',
-              to: '/users/introduction',
+              to: '/docs/users/introduction',
             },
           ],
         },

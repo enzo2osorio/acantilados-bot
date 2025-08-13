@@ -1,5 +1,6 @@
+title: Modelo de Datos
+description: Definición de entidades y relaciones principales usadas por el bot.
 ---
-id: data-model
 title: Modelo de Datos
 description: Definición de entidades y relaciones principales usadas por el bot.
 ---
@@ -61,7 +62,7 @@ Movimientos registrados (flujo principal del bot).
 
 Prefijo configurable por instancia (normalmente `wa_instance`).
 
-### {prefix}_creds
+### `{prefix}`_creds
 Documento único por instancia con el blob serializado de `creds` de Baileys.
 
 | Campo | Descripción |
@@ -70,10 +71,11 @@ Documento único por instancia con el blob serializado de `creds` de Baileys.
 | data | Objeto serializado con claves binarias codificadas base64 |
 | updatedAt | Fecha última persistencia |
 
-### {prefix}_keys
+### `{prefix}`_keys
 Llaves dinámicas / sesiones de Baileys.
 
 | Campo | Descripción |
+|-------|-------------|
 | instanceId | Id instancia |
 | type | Tipo (ej: `session`, `app-state-sync-key`, etc.) |
 | id | Identificador específico (jid, device, etc.) |
@@ -83,12 +85,13 @@ Llaves dinámicas / sesiones de Baileys.
 Indices creados por `ensureKeysIndexes` para `{ instanceId, type, id }` y TTL opcional sobre llaves expirátiles.
 
 ### wa_instance_locks (por defecto)
-Implementa locking de instancia con lease renovable (ver `lock-mongo.js`). Campos: `instanceId, ownerId, expiresAt, meta{...}`.
+Implementa locking de instancia con lease renovable (ver `lock-mongo.js`). Campos: `instanceId`, `ownerId`, `expiresAt`, `meta[...]`.
 
 ### temp_sessions
 Sesiones temporales de flujo conversacional.
 
 | Campo | Descripción |
+|-------|-------------|
 | userId | JID del usuario (sin sufijo o completo) |
 | structureOutput | Estado estructurado parcial del parsing |
 | flowState | Estado de la máquina de flujo |

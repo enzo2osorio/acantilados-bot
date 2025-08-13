@@ -1,6 +1,6 @@
 ---
-title: Preguntas Frecuentes
-description: Respuestas rápidas a dudas comunes.
+title: "Preguntas Frecuentes"
+description: "Respuestas rápidas a dudas comunes."
 ---
 
 ### ¿Necesito escanear el QR cada día?
